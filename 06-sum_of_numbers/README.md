@@ -1,13 +1,15 @@
-Start
-Create a variable named stop to save the user's response
-Create a variable named counter to store the integer of the countdown number
-Create a while loop (if stop is not equal to "stop"):
-Print the integer contained in counter
-Subtract 1 from the integer in counter
-Ask the user if they wish to stop and store in the variable stop
-If the user entered "stop":
-Use the break command to stop the loop
-Else if the counter gets to 0:
-Use the break command to stop the loop
-Print that the countdown has stopped
-End
+* Start
+
+* Ask the user for a number and store it in a variable named number
+
+* Convert the input to an integer
+
+* Create a variable named sum and store the integer zero
+
+* Use a for loop with a range of 1 to the user input plus 1
+
+* Add the range to the variable sum
+
+* Print the final sum
+
+* End
