@@ -1,27 +1,21 @@
 #-----------------------------------------------------------------------------
-# Name:        Countdown Timer (countdown_timer.py)
-# Purpose:     To provide a program that counts from 10 to 1 till the user enters stop
+# Name:        Sum of Numbers (sum_of_numbers.py)
+# Purpose:     To provide a program that adds the numbers in a range
 #
 # Author:      Smrithi Manoj
 # Created:     6-Mar-2025
-# Updated:     6-Mar-2025
+# Updated:     17-Mar-2025
 #-----------------------------------------------------------------------------
 
-# stop variable to check if the user entered "stop"
-stop = " "
+# ask the user for a number and store in the variable as an integer
+number = int(input("Enter a number: "))
 
-# counter variable to store the countdown number
-counter = 10
+# sum variable to store the sum
+sum = 0
 
-# while loop that counts down until the user enters "stop" or countdown reaches 1
-while stop != "stop":
-    print(counter)
-    counter -= 1
-    stop = input("Enter 'stop' to cancel or press enter to continue: ")
-    if stop == "stop":
-        break
-    elif counter == 0:
-        break
+# for loop that adds the range to the variable sum
+for i in range(1, number + 1):
+    sum += i
 
-# print if the user enters "stop" or if countdown reaches 1
-print("Countdown stopped")
+# print the final sum
+print(sum)
