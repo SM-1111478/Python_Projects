@@ -2,7 +2,7 @@
 # Name:        Even or Odd Number Checker (evenOrOddNUmberChecker.py)
 # Purpose:     To provide a program that determines if a number is even or odd
 #
-# Author:      Smrithi Manoj
+# Author:      Smrithi M
 # Created:     25-Feb-2025
 # Updated:     27-Feb-2025
 #-----------------------------------------------------------------------------

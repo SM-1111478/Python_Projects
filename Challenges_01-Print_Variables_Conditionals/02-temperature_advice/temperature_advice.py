@@ -2,7 +2,7 @@
 # Name:        Temperature Advice (temperatureAdvice.py)
 # Purpose:     To provide a program that issues suggestions based on the temperature
 #
-# Author:      Smrithi Manoj
+# Author:      Smrithi M
 # Created:     24-Feb-2025
 # Updated:     27-Feb-2025
 #-----------------------------------------------------------------------------

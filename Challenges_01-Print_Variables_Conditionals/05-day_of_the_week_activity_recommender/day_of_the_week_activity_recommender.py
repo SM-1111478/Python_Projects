@@ -2,7 +2,7 @@
 # Name:        Day of the Week Activity Recommender (dayOfTheWeekActivityRecommender.py)
 # Purpose:     To provide a program that suggests an activity for the day of the week
 #
-# Author:      Smrithi Manoj
+# Author:      Smrithi M
 # Created:     25-Feb-2025
 # Updated:     27-Feb-2025
 #-----------------------------------------------------------------------------

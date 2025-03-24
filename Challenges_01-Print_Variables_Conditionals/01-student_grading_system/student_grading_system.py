@@ -2,7 +2,7 @@
 # Name:        Student Grading System (studentGradingSystem.py)
 # Purpose:     To provide a program that states the letter grade based on the number grade
 #
-# Author:      Smrithi Manoj
+# Author:      Smrithi M
 # Created:     24-Feb-2025
 # Updated:     27-Feb-2025
 #-----------------------------------------------------------------------------

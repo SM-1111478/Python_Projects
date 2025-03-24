@@ -2,7 +2,7 @@
 # Name:        Voting Eligibility Checker (votingEligibilityChecker.py)
 # Purpose:     To provide a program that determines if the user is eligible to vote
 #
-# Author:      Smrithi Manoj
+# Author:      Smrithi M
 # Created:     25-Feb-2025
 # Updated:     27-Feb-2025
 #-----------------------------------------------------------------------------

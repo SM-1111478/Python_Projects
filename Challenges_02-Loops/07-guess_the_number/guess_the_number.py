@@ -2,7 +2,7 @@
 # Name:        Guess the Number (guess_the_number.py)
 # Purpose:     To provide a program that prompts the user to guess a random pre-determined number
 #
-# Author:      Smrithi Manoj
+# Author:      Smrithi M
 # Created:     5-Mar-2025
 # Updated:     5-Mar-2025
 #-----------------------------------------------------------------------------

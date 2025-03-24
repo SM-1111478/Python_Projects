@@ -2,7 +2,7 @@
 # Name:        Sum of Numbers (sum_of_numbers.py)
 # Purpose:     To provide a program that adds the numbers in a range
 #
-# Author:      Smrithi Manoj
+# Author:      Smrithi M
 # Created:     6-Mar-2025
 # Updated:     17-Mar-2025
 #-----------------------------------------------------------------------------

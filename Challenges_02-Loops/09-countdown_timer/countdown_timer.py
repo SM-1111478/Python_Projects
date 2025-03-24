@@ -2,7 +2,7 @@
 # Name:        Countdown Timer (countdown_timer.py)
 # Purpose:     To provide a program that counts from 10 to 1 till the user enters stop
 #
-# Author:      Smrithi Manoj
+# Author:      Smrithi M
 # Created:     6-Mar-2025
 # Updated:     6-Mar-2025
 #-----------------------------------------------------------------------------
