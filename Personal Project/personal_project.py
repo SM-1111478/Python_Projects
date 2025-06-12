@@ -4,7 +4,7 @@
 #
 # Author:      Smrithi M
 # Created:     20-May-2025
-# Updated:     09-Jun-2025
+# Updated:     12-Jun-2025
 #-----------------------------------------------------------------------------
 
 # list to track inventory
@@ -13,7 +13,7 @@ inventory = []
 # set to track the rooms already visited
 visited_rooms = set()
 
-
+# function to start the game
 def start_game():
     print("The goal is to escape the house. Pick one of the choices in the parentheses. If you die, you will have to "
           "restart from the beginning, so choose wisely.")
@@ -24,8 +24,10 @@ def start_game():
     print("Everyone believes the house is haunted, but you don’t believe in ghosts.")
     print("You take a step forward, unsure.")
     print("")
+# loop for the choice that runs as long as the input is invalid
     while True:
         choice = input("Are you sure you wish to enter? (yes / no): ").lower()
+# conditional based on user input for next move
         if choice == "no":
             print("You turn around and walk back home. Your friends make fun of you for the rest of your life.")
             play_again()
@@ -38,8 +40,9 @@ def start_game():
             print("Invalid choice.")
             print("")
 
-
+# function for when foyer is entered
 def foyer():
+# conditional that runs if room is visited for the first time
     if "foyer" not in visited_rooms:
         visited_rooms.add("foyer")
         print("")
@@ -50,9 +53,11 @@ def foyer():
         print("There is a door ahead of you that seems to lead into a long hallway, and behind you is the door you "
             "entered through.")
         choice = " "
+# loop for the choice that runs as long as the input is invalid
         while choice != "north":
             print("")
             choice = input("Do you go north into the hallway or south back through the entrance? (north / south): ").lower()
+# conditional based on user input for next move
             if choice == "south":
                 print("")
                 print("You try the entrance door, but it’s locked. Looks like you’ll have to find another way out.")
@@ -61,13 +66,15 @@ def foyer():
             else:
                 print("Invalid choice.")
                 print("")
+# runs if room is revisited
     else:
         print("")
         print("You're back in the foyer. You look at the numbers on the wall. \033[95m\033[1m5372\033[0m.")
         south_hallway()
 
-
+# function for when south hallway is entered
 def south_hallway():
+# conditional that runs if room is visited for the first time
     if "south hallway" not in visited_rooms:
         visited_rooms.add("south hallway")
         print("")
@@ -75,13 +82,16 @@ def south_hallway():
         print("You see a door to your left leading to a library and one to your right leading to a dining room.")
         print("You also see other rooms farther down the hallway.")
         print("")
+# runs if room is revisited
     else:
         print("")
         print("You're back at the south end of the hallway.")
         print("")
+# loop for the choice that runs as long as the input is invalid
     while True:
         choice = input("Do you go west into the library, east into the dining room, south into the foyer, "
                            "or to the north end of the hallway? (east / west / south / north): ").lower()
+# conditional based on user input for next move
         if choice == "west":
             library()
             break
@@ -98,16 +108,19 @@ def south_hallway():
             print("Invalid choice.")
             print("")
 
-
+# function for when library is entered
 def library():
+# conditional that runs if room is visited for the first time
     if "library" not in visited_rooms:
         visited_rooms.add("library")
         print("")
         print("You walk into the library when, suddenly, a book comes flying at your face.")
         print("")
+# loop for the choice that runs as long as the input is invalid
         while True:
             choice = input("What do you do? (duck / freeze): ").lower()
             print("")
+# conditional based on user input for next move
             if choice == "duck":
                 print("You duck just in time to avoid the book, which hits the wall behind you.")
                 print("You take a look around the room. You’re in a library with a large bookshelf filled with old "
@@ -116,8 +129,10 @@ def library():
                 print("You inspect the safe and notice it requires a passcode with \033[94m\033[1m4 digits\033[0m.")
                 print("")
                 passcode = " "
+# loop for the choice that runs as long as the input is incorrect
                 while passcode != 5372:
                     passcode = int(input("Enter the passcode: "))
+# conditional based on user input for passcode
                     if passcode == 5372:
                         print("The safe door swings open, revealing a shiny \033[4mgolden key\033[0m laying inside.")
                         print("You pocket the key and go back into the hallway.")
@@ -133,13 +148,15 @@ def library():
             else:
                 print("Invalid choice.")
                 print("")
+# runs if room is revisited
     else:
         print("")
         print("You're back in the library. You look around but find nothing.")
         south_hallway()
 
-
+# function for when dining room is entered
 def dining_room():
+# conditional that runs if room is visited for the first time
     if "dining room" not in visited_rooms:
         visited_rooms.add("dining room")
         print("")
@@ -152,9 +169,11 @@ def dining_room():
         print("You walk over to where the broken vase lies shattered, the roses scattered on the floor.")
         print("In the midst of it all, a small, \033[4mblack key\033[0m. The key is buried under the roses.")
         print("")
+# loop for the choice that runs as long as the input is invalid
         while True:
             choice = input("Do you try to pick up the key or look around first? (pick up / look): ").lower()
             print("")
+# conditional based on user input for next move
             if choice == "pick up":
                 print("You move one of the roses aside, but get pricked by its thorns in the process.")
                 print("You pocket the key and try to move forward, but feel really dizzy all of a sudden.")
@@ -169,6 +188,7 @@ def dining_room():
                 while True:
                     choice2 = input(
                         "Do you go east into the kitchen or west back into the hallway? (east / west): ").lower()
+# conditional based on user input for next move
                     if choice2 == "east":
                         kitchen()
                         break
@@ -182,11 +202,14 @@ def dining_room():
             else:
                 print("Invalid choice.")
                 print("")
+# runs if room is revisited
     else:
         print("")
         print("You're back in the dining room. You look around but find nothing.")
+# loop for the choice that runs as long as the input is invalid
         while True:
             choice2 = input("Do you go east into the kitchen or west back into the hallway? (east / west): ").lower()
+# conditional based on user input for next move
             if choice2 == "east":
                 kitchen()
                 break
@@ -197,8 +220,9 @@ def dining_room():
                 print("Invalid choice.")
                 print("")
 
-
+# function for when kitchen is entered
 def kitchen():
+# conditional that runs if room is visited for the first time
     if "kitchen" not in visited_rooms:
         visited_rooms.add("kitchen")
         print("")
@@ -206,9 +230,11 @@ def kitchen():
         print("As you take in the sight, the refrigerator starts \033[93mglowing and shaking violently\033[0m.")
         print("You have a bad feeling, but you carefully step over the pots and pans towards the refrigerator anyway.")
         print("")
+# loop for the choice that runs as long as the input is invalid
         while True:
             choice = input("Do you open the refrigerator? (yes / no): ").lower()
             print("")
+# conditional based on user input for next move
             if choice == "yes":
                 print("You open the refrigerator, and a \033[93mgiant hand\033[0m comes out and pulls you in. You die.")
                 play_again()
@@ -223,13 +249,15 @@ def kitchen():
             else:
                 print("Invalid choice.")
                 print("")
+# runs if room is revisited
     else:
         print("")
         print("You're back in the kitchen. You look around but find nothing.")
         south_hallway()
 
-
+# function for when north hallway is entered
 def north_hallway():
+# conditional that runs if room is visited for the first time
     if "north hallway" not in visited_rooms:
         visited_rooms.add("north hallway")
         print("")
@@ -239,8 +267,10 @@ def north_hallway():
         print("To your east are stairs that lead down, but it’s pitch black.")
         print("And to your south is the other end of the hallway, where you just came from.")
         print("")
+# loop for the choice that runs as long as the input is invalid
         while True:
             choice = input("Where do you go? (west / east / north / south): ").lower()
+# conditional based on user input for next move
             if choice == "west":
                 living_room()
             elif choice == "east":
@@ -252,13 +282,16 @@ def north_hallway():
             else:
                 print("Invalid choice.")
                 print("")
+# runs if room is revisited
     else:
         print("")
         print("You're back at the north end of the hallway.")
         print("")
+# loop for the choice that runs as long as the input is invalid
         while True:
             choice = input("Do you go west into the living room, east into the basement, the south end of the "
                            "hallway, or north into the locked room? (east / west / south / north): ").lower()
+# conditional based on user input for next move
             if choice == "west":
                 living_room()
             elif choice == "east":
@@ -271,8 +304,9 @@ def north_hallway():
                 print("Invalid choice.")
                 print("")
 
-
+# function for when living room is entered
 def living_room():
+# conditional that runs if room is visited for the first time
     if "living room" not in visited_rooms:
         visited_rooms.add("living room")
         print("")
@@ -285,9 +319,11 @@ def living_room():
               "the end of every place. What am I?”\033[0m")
         print("")
         answer = {"the letter e", "e", "letter e"}
+# loop for the choice that runs as long as the input is incorrect
         while True:
             guess = input("Enter your answer: ").lower()
             print("")
+# conditional based on user input for answer
             if guess not in answer:
                 print("\033[91m\033[1mIncorrect. Try again.\033[0m")
             else:
@@ -295,13 +331,15 @@ def living_room():
         print("\033[92m\033[1m“Correct. You may leave.”\033[0m")
         print("You run back to the hallway as the woman disappears in a cloud of dust.")
         north_hallway()
+# runs if room is revisited
     else:
         print("")
         print("You're back in the living room. You look around but find nothing.")
         north_hallway()
 
-
+# function for when basement is entered
 def basement():
+# conditional based on if item is in inventory
     if "flashlight" in inventory:
         print("")
         print("You turn on your flashlight and slowly make your way downstairs.")
@@ -310,10 +348,13 @@ def basement():
         print("You're in the basement, with random junk scattered everywhere.")
         print("To your south is a door with a rusted black padlock and to your west are the stairs.")
         print("")
+# conditional that runs if room is visited for the first time
         if basement not in visited_rooms:
             visited_rooms.add("basement")
+# loop for the choice that runs as long as the input is invalid
             while True:
                 choice = input("Do you go west back upstairs or south into the room? (west / south): ").lower()
+# conditional based on user input for next move
                 if choice == "west":
                     north_hallway()
                     break
@@ -323,11 +364,14 @@ def basement():
                 else:
                     print("Invalid choice.")
                     print("")
+# runs if room is revisited
         else:
             print("")
             print("You're back in the basement. You look around but find nothing.")
+# loop for the choice that runs as long as the input is invalid
             while True:
                 choice = input("Do you go west back upstairs or south into the room? (west / south): ").lower()
+# conditional based on user input for next move
                 if choice == "west":
                     north_hallway()
                     break
@@ -342,12 +386,14 @@ def basement():
         print("It's too dark. Try to find a flashlight.")
         north_hallway()
 
-
+# function for when storage room is entered
 def storage_room():
+# conditional based on if item is in inventory
     if "black_key" in inventory:
         print("")
         print("You unlock the padlock with your key and enter a small storage room.")
         print("")
+# conditional that runs if room is visited for the first time
         if storage_room not in visited_rooms:
             visited_rooms.add("storage_room")
             print("It's completely empty save for a single, \033[4mlong rope\033[0m on the floor. You take the rope and head back "
@@ -359,22 +405,26 @@ def storage_room():
         print("Find the key to unlock the door.")
         north_hallway()
 
-
+# function for when staircase is entered
 def staircase():
+# conditional based on if item is in inventory
     if "gold_key" in inventory:
         print("")
         print("You unlock the door and walk inside to find a wide staircase leading upstairs.")
         print("")
+# conditional that runs if room is visited for the first time
         if staircase not in visited_rooms:
             visited_rooms.add(staircase)
             print("You go upstairs and find a balcony and step outside. You look down. It’s a steep drop.")
             print("You might not survive falling from here. If only you had something to climb down with.")
             print("")
+# conditional based on if item is in inventory
             if "rope" not in inventory:
                 print("You should find a \033[4mrope\033[0m to climb down safely.")
                 north_hallway()
             else:
                 escape()
+# runs if room is revisited
         else:
             print("")
             print("You go back upstairs to the balcony.")
@@ -384,8 +434,9 @@ def staircase():
         print("Find the key to unlock the door.")
         north_hallway()
 
-
+# function to escape
 def escape():
+# conditional based on if item is in inventory
         if "rope" in inventory:
             print("")
             print("You take your rope and tie it tightly on the railing, making several knots.")
@@ -399,10 +450,13 @@ def escape():
             print("You try to climb down slowly, but your foot slips and you fall. You die.")
             play_again()
 
+# function to restart the game
 def play_again():
+# loop for the choice that runs as long as the input is invalid
     while True:
         print("")
         restart = input("Play again? (yes / no): ").lower()
+# conditional based on user input for next move
         if restart == "yes":
             print("")
             inventory.clear()
@@ -416,5 +470,5 @@ def play_again():
         else:
             print("Invalid choice.")
 
-
+# calls the function to start the game
 start_game()
